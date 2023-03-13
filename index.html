@@ -9,7 +9,7 @@
 </head>
 <body>
     <form name="formulario_de_despachos" netlify action="#">
-        <h3>Despacho de Almacen Quimicos</h3>
+        <h3>Despacho de Almacenes</h3>
         <div class="boxes_form">
             <label for="responsible">Responsable</label>
             <select name="responsable" id="resp" required>
@@ -18,6 +18,7 @@
                 <option value="Jose">Jose</option>
             </select>
         </div>
+    <div class="info">  
         <div class="boxes_form">
             <label for="type">Tipo</label>
             <select name="tipo" id="" required>
@@ -89,7 +90,7 @@
         <div class="boxes_form">
             <label for="unit_of_measure">UM</label>
             <select name="unidad de medida" id="unit_of_measure" required>
-                <option value="">Seleccione una Unidad de Medida</option>
+                <option value="">Selec una Unidad de Medida</option>
                 <option value="KILO">KILO</option>
                 <option value="COPA">COPA</option>
                 <option value="UNIDAD">UNIDAD</option>
@@ -102,6 +103,7 @@
             <label for="quantity">Cantidad</label>
             <input name="CANTIDAD" type="number" required>
         </div>
+    </div>  
         <button id="btn_send">Enviar</button>
     </form>
 </body>
