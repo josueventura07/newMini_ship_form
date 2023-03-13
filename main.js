@@ -1,9 +1,40 @@
-/*const btnSend = document.querySelector('#btn_send')
+import {description, UM} from './data.js'
 
-console.log(btnSend)
 
-btnSend.addEventListener('click', (e) => {
-    if(e.target) {
-       
-    }
-})*/
+const containerSelectByDescrip = document.querySelector('.input_descript')
+const containerSelectByUM = document.querySelector('.input_um')
+
+
+function UnitOfMeasure(um) {
+    let html = '<option value="">Selec una Unidad de Medida</option>';
+                   
+    um.map(element => {
+        
+       html += `
+                
+                
+                <option value="${element}">${element}</option>
+                
+                `
+              return containerSelectByUM.innerHTML = html; 
+        })          
+    };
+
+function descriptions(description) {
+    let html = '<option value="">Seleccione Producto</option>';
+    
+    description.map(element => {
+        
+       html += `
+                
+                
+                <option value="${element}">${element}</option>
+                
+                `
+              return containerSelectByDescrip.innerHTML = html; 
+        })          
+    };
+
+UnitOfMeasure(UM)    
+descriptions(description)  
+
