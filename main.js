@@ -1,4 +1,4 @@
-import {listComp, listHorno, listReactive, UM} from './data.js'
+import {listComp, listHorno, listReactive, UM, listBathroom, listOffice} from './data.js'
 
 
 const containerSelectByDescrip = document.querySelector('.input_descript')
@@ -12,14 +12,17 @@ containerSelectByType.addEventListener('change', (e) => {
     
    let value = e.currentTarget.value
     
-    if(value == 'COMPONENTE') {
+    if(value == 'COMPONENTES') {
         descriptions(listComp)
     } else if(value === 'HORNO') {
         descriptions(listHorno)
     } else if(value === 'REACTIVO') {
         descriptions(listReactive)
-    }
-
+    } else if(value === 'INSUMOS PARA BAÑOS') {
+        descriptions(listBathroom)
+    } else if(value === 'MATERIALES PARA OFICINA') {
+        descriptions(listOffice)
+    }    
     
 })
 
@@ -29,8 +32,6 @@ function UnitOfMeasure(um) {
     um.map(element => {
         
        html += `
-                
-                
                 <option value="${element}">${element}</option>
                 
                 `
@@ -39,18 +40,16 @@ function UnitOfMeasure(um) {
     };
 
 function descriptions(description) {
+    
     let html = '<option value="">Seleccione Producto</option>';
     
-    description.map(element => {
-        
-       html += `
-                
-                
-                <option value="${element}">${element}</option>
-                
-                `
-              return containerSelectByDescrip.innerHTML = html; 
-        })          
+        description.map(element => {
+            
+           html += `
+                    <option value="${element}">${element}</option>
+                   `
+                  return containerSelectByDescrip.innerHTML = html; 
+            })          
     };
 
 UnitOfMeasure(UM)    

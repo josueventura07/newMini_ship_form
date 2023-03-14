@@ -3,6 +3,12 @@ const listComp = ["FUNDAS","GOMITAS","CINTA ADHESIVA","FLEJE",
 "LABEL 4 X 6","PAPEL HIGIENICO","TOALLA PRECORTADA",
 ]
 
+const listBathroom = ["PAPEL HIGIENICO","TOALLA PRECORTADA",
+]
+
+const listOffice = ["RESMA DE PAPEL 8 1/2 x 11"
+]
+
 const listHorno = [
 "YL482 55G-FLO YELLOW","400 55G-FLO PINK","BERZAFLUOR PINK BB",
 "BL563 55G FLO BLUE","BL6011 BLUE/R","R903-17 MINT GREEN","VL401 FLO VIOLET",
@@ -27,5 +33,7 @@ export {
     listComp,
     listHorno,
     listReactive,
-    UM
+    UM,
+    listBathroom,
+    listOffice
 }
