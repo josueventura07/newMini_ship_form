@@ -68,4 +68,3 @@ function descriptions(description) {
 UnitOfMeasure(UM)    
 types(listTypes)  
 
-console.log(containerSelectByType.tar)
