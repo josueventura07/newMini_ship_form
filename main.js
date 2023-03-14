@@ -1,4 +1,4 @@
-import {listComp, listHorno, listReactive, UM, listBathroom, listOffice} from './data.js'
+import {listComp, listHorno, listReactive, UM, listTypes, listBathroom, listOffice} from './data.js'
 
 
 const containerSelectByDescrip = document.querySelector('.input_descript')
@@ -39,6 +39,19 @@ function UnitOfMeasure(um) {
         })          
     };
 
+function types(type) {
+        let html = '<option value="">Elija el tipo</option>';
+                       
+        type.map(element => {
+            
+           html += `
+                    <option value="${element}">${element}</option>
+                    
+                    `
+                  return containerSelectByType.innerHTML = html; 
+            })          
+    };    
+
 function descriptions(description) {
     
     let html = '<option value="">Seleccione Producto</option>';
@@ -53,6 +66,6 @@ function descriptions(description) {
     };
 
 UnitOfMeasure(UM)    
-  
+types(listTypes)  
 
 console.log(containerSelectByType.tar)
