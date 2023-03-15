@@ -35,7 +35,7 @@ function printItems() {
            
 }
 
-
+printItems()
 
 form1.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -78,8 +78,6 @@ bodyList.addEventListener('click', (e) => {
     }
     
 })
-
-printItems()
 
 containerSelectByType.addEventListener('change', (e) => {
     
