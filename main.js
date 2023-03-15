@@ -18,11 +18,11 @@ function printItems() {
 
             html += `
                     <tr>
-                        <th class="row" name="id(${item.id})"><input class="inputs_table" type="text" value="${item.id}"></th>
-                        <td name="tipo(${item.type})"><input class="inputs_table" type="text" value="${item.type}"></td>
-                        <td name="descripcion(${item.description})"><input class="inputs_table" type="text" value="${item.description}"></td>
-                        <td name="unidad de medida(${item.um})"><input class="inputs_table" type="text" value="${item.um}"></td>
-                        <td name="cantidad(${item.quantity})"><input class="inputs_table" type="text" value="${item.quantity}"></td>
+                        <th class="row"><input class="inputs_table" type="text" name="id" value="${item.id}"></th>
+                        <td><input class="inputs_table" type="text" name="tipo" value="${item.type}"></td>
+                        <td><input class="inputs_table" type="text" name="descripcion" value="${item.description}"></td>
+                        <td><input class="inputs_table" type="text" name="unidad de medida" value="${item.um}"></td>
+                        <td><input class="inputs_table" type="text" name="cantidad" value="${item.quantity}"></td>
                         <td id="${item.id}">
                             <button class="btn_delete">Borrar</button>
                         </td>
