@@ -22,7 +22,7 @@ function printItems() {
                         <td><input class="inputs_table" type="text" name="tipo(${item.id})" value="${item.type}"></td>
                         <td><input class="inputs_table" type="text" name="descripcion(${item.id})" value="${item.description}"></td>
                         <td><input class="inputs_table" type="text" name="unidad de medida(${item.id})" value="${item.um}"></td>
-                        <td><input class="inputs_table" type="number" name="cantidad(${item.id})" value="${item.quantity}"></td>
+                        <td><input class="inputs_table" type="text" name="cantidad(${item.id})" value="${item.quantity}"></td>
                         <td id="${item.id}">
                             <button class="btn_delete">Borrar</button>
                         </td>
