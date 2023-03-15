@@ -17,8 +17,8 @@ function printItems() {
         for(const item of Items) {
 
             html += `
-                    <tr>
-                        <th class="row">${item.id}</th>
+                    
+                        
                         <td><input type="text" name="tipo" value="${item.type}"></td>
                         <td><input type="text" name="descripcion" value="${item.description}"></td>
                         <td><input type="text" name="unidad de medida" value="${item.um}"></td>
@@ -26,7 +26,7 @@ function printItems() {
                         <td id="${item.id}">
                             <button class="btn_delete">Borrar</button>
                         </td>
-                    </tr>
+                    
                 `
 
         }
