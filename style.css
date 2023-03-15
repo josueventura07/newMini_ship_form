@@ -151,10 +151,15 @@ tbody {
     font-size: 12px;
 }
 
+.inputs_table {
+    width: 100%;
+    font-size: 12px;
+    text-align: center;
+}
+
 .btn_delete {
     width: 100%;
     max-width: 50px;
-    
     border-radius: 5px;
     cursor: pointer;
     border: none;

@@ -17,21 +17,22 @@ function printItems() {
         for(const item of Items) {
 
             html += `
-                    <td>
-                        <input type="text" name="id(${item.id})" value="${item.id}">
-                        <input type="text" name="tipo(${item.id})" value="${item.type}">
-                        <input type="text" name="descripcion(${item.id})" value="${item.description}">
-                        <input type="text" name="unidad de medida(${item.id})" value="${item.um}">
-                        <input type="number" name="cantidad(${item.id})" value="${item.quantity}">
-                       
-                            <button id="${item.id}" class="btn_delete">Borrar</button>
-                        
-                    </td>
+                    <tr>
+                        <th class="row"><input class="inputs_table" type="text" name="id(${item.id})" value="${item.id}"></th>
+                        <td><input class="inputs_table" type="text" name="tipo(${item.id})" value="${item.type}"></td>
+                        <td><input class="inputs_table" type="text" name="descripcion(${item.id})" value="${item.description}"></td>
+                        <td><input class="inputs_table" type="text" name="unidad de medida(${item.id})" value="${item.um}"></td>
+                        <td><input class="inputs_table" type="number" name="cantidad(${item.id})" value="${item.quantity}"></td>
+                        <td id="${item.id}">
+                            <button class="btn_delete">Borrar</button>
+                        </td>
+                    </tr>
                 `
 
         }
         
-        bodyList.innerHTML = html;    
+        bodyList.innerHTML = html;
+        console.log(Items)    
 }
 
 
