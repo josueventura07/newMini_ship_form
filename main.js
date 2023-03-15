@@ -4,9 +4,79 @@ import {listComp, listHorno, listReactive, UM, listTypes, listBathroom, listOffi
 const containerSelectByDescrip = document.querySelector('.input_descript')
 const containerSelectByUM = document.querySelector('.input_um')
 const containerSelectByType = document.querySelector('.input_type')
-const form = document.querySelector('.formulario')
+const form1 = document.querySelector('#form1')
+const form2 = document.querySelector('#form2')
+const bodyList = document.querySelector('#list')
+
+const Items = []
+let id = 1   
+
+function printItems() {
+    let html = ''
+
+        for(const item of Items) {
+
+            html += `
+                    <tr>
+                        <th class="row">${item.id}</th>
+                        <td>${item.type}</td>
+                        <td>${item.description}</td>
+                        <td>${item.um}</td>
+                        <td>${item.quantity}</td>
+                        <td id="${item.id}">
+                            <button class="btn_delete">Borrar</button>
+                        </td>
+                    </tr>
+                `
+
+        }
+
+        bodyList.innerHTML = html;    
+}
 
 
+
+form1.addEventListener('submit', (e) => {
+    e.preventDefault()
+
+    const type = e.target.type.value
+    const description = e.target.description.value
+    const um = e.target.unitOfMeasure.value
+    const quantity = e.target.quantity.value
+
+    const newItems = {
+        id,
+        type,
+        description,
+        um,
+        quantity
+    }
+
+    id++
+
+    Items.push(newItems)
+    form1.reset()
+    printItems()
+})
+
+bodyList.addEventListener('click', (e) => {
+    
+    if(e.target.classList.contains('btn_delete')) {
+        
+        const idItem = +e.target.parentElement.id
+
+       for (let i = 0; i < Items.length; i++) {
+        if(Items[i].id === idItem) {
+            Items.splice(i, 1)
+            break
+        }
+        
+     }
+     console.log(Items)
+     printItems()  
+    }
+    
+})
 
 containerSelectByType.addEventListener('change', (e) => {
     

@@ -8,48 +8,69 @@
     <title>Document</title>
 </head>
 <body>
-    <form class="formulario" name="formulario_de_despachos" netlify action="#">
-        <h3>Despacho de Almacenes</h3>
-        <div class="boxes_form">
-            <label for="responsible">Responsable</label>
-            <select name="responsable" id="resp" required>
-                <option value="">Seleccione el Responsable</option>
-                <option value="Ambiorix Ramirez">Ambiorix Ramirez</option>
-                <option value="Jose Jimenez">Jose Jimenez</option>
-                <option value="Josue Ventura">Josue Ventura</option>
-            </select>
-        </div>
-    <div class="info">  
-        <div class="boxes_form">
-            <label for="type">Tipo</label>
-            <select class="input_type" name="tipo" id="" required>
-                <option value="">Elija el tipo</option>
-                <option value="COMPONENTES">COMPONENTES</option>
-                <option value="INSUMOS PARA BAÑOS">INSUMOS PARA BAÑOS</option>
-                <option value="MATERIALES PARA OFICINA">MATERIALES PARA OFICINA</option>
-                <option value="HORNO">HORNO</option>
-                <option value="REACTIVO">REACTIVO</option>
-            </select>
-        </div>
-        <div class="boxes_form description">
-            <label for="description">Descripción</label>
-            <select class="input_descript" name="descripcion" id="" required>
-                
-            </select>
-        </div>
-        <div class="boxes_form">
-            <label for="unit_of_measure">UM</label>
-            <select class="input_um" name="unidad de medida" id="unit_of_measure" required>
-                 
-            </select>
-        </div>
-        <div class="boxes_form">
-            <label for="quantity">Cantidad</label>
-            <input name="CANTIDAD" type="number" required>
-        </div>
-    </div>  
-        <button id="btn_send">Enviar</button>
-    </form>
+<div class="container">    
+    <div class="form_box1">
+        <form id="form1" class="form1" name="formulario_de_despachos" netlify action="#">
+            <h3>Despacho de Almacenes</h3>
+            
+            <div class="info">  
+                <div class="boxes_form">
+                    <label for="type">Tipo</label>
+                    <select class="input_type" name="type" id="type" required>
+                        <option value="">Elija el tipo</option>
+                        <option value="COMPONENTES">COMPONENTES</option>
+                        <option value="INSUMOS PARA BAÑOS">INSUMOS PARA BAÑOS</option>
+                        <option value="MATERIALES PARA OFICINA">MATERIALES PARA OFICINA</option>
+                        <option value="HORNO">HORNO</option>
+                        <option value="REACTIVO">REACTIVO</option>
+                    </select>
+                </div>
+                <div class="boxes_form description">
+                    <label for="description">Descripción</label>
+                    <select class="input_descript" name="description" id="descripcion" required></select>
+                </div>
+                <div class="boxes_form">
+                    <label for="unit_of_measure">UM</label>
+                    <select class="input_um" name="unitOfMeasure" id="unit_of_measure" required></select>
+                </div>
+                <div class="boxes_form">
+                    <label for="quantity">Cantidad</label>
+                    <input name="quantity" type="number" id="quantity" required>
+                </div>
+            </div>  
+            <button class="btn_add" id="btn_add">Agregar</button>
+        </form>
+    </div>
+    <div class="form_box2">
+        <form id="form1" class="form2" name="formulario_de_despachos" netlify action="#">
+            <div class="boxes_form">
+                <label for="responsible">Responsable</label>
+                <select name="responsable" id="responsible" required>
+                    <option value="">Seleccione el Responsable</option>
+                    <option value="Ambiorix Ramirez">Ambiorix Ramirez</option>
+                    <option value="Jose Jimenez">Jose Jimenez</option>
+                    <option value="Josue Ventura">Josue Ventura</option>
+                </select>
+            </div>
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th class="col">#</th>
+                        <th class="col">Tipo</th>
+                        <th class="col">Descripción</th>
+                        <th class="col">UM</th>
+                        <th class="col">Cantidad</th>
+                        <th class="col">Opciones</th>
+                      </tr>
+                    </thead>
+                    
+                    <tbody id="list"></tbody>
+
+                  </table>
+            <button class="btn_send">Enviar</button>
+        </form>
+    </div>
+</div>  
 </body>
 <script src="./main.js" type="module"></script>
 </html>
