@@ -42,7 +42,7 @@
         </form>
     </div>
     <div class="form_box2">
-        <form id="form1" class="form2" name="formulario_de_despachos" netlify action="#">
+        <form id="form2" class="form2" name="formulario_de_despachos" netlify action="#">
             <div class="boxes_form">
                 <label for="responsible">Responsable</label>
                 <select name="responsable" id="responsible" required>
@@ -63,7 +63,28 @@
                         <th class="col">Opciones</th>
                       </tr>
                     </thead>
-                    <tbody id="details"></tbody>
+                    <tbody id="details">
+                        <tr>
+                            <th class="row"><input type="text" name="tipo" value="1"></th>
+                            <td><input type="text" name="tipo" value="componentes"></td>
+                            <td><input type="text" name="descripcion" value="fundas"></td>
+                            <td><input type="text" name="unidad de medida" value="unidad"></td>
+                            <td><input type="number" name="cantidad" value="50"></td>
+                            <td id="1">
+                                <button class="btn_delete">Borrar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="row"><input type="text" name="tipo" value="2"></th>
+                            <td><input type="text" name="tipo" value="componentes"></td>
+                            <td><input type="text" name="descripcion" value="gomitas"></td>
+                            <td><input type="text" name="unidad de medida" value="libra"></td>
+                            <td><input type="number" name="cantidad" value="50"></td>
+                            <td id="1">
+                                <button class="btn_delete">Borrar</button>
+                            </td>
+                        </tr>
+                    </tbody>
 
                   </table>
             <button class="btn_send">Enviar</button>

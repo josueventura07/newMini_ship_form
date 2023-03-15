@@ -30,7 +30,7 @@ function printItems() {
                 `
 
         }
-
+        
         bodyList.innerHTML = html;    
 }
 
