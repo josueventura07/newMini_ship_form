@@ -32,10 +32,10 @@ function printItems() {
         }
         
         bodyList.innerHTML = html;
-        console.log(Items)    
+           
 }
 
-
+printItems()
 
 form1.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -73,7 +73,7 @@ bodyList.addEventListener('click', (e) => {
         }
         
      }
-     console.log(Items)
+     
      printItems()  
     }
     
