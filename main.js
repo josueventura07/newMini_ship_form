@@ -6,7 +6,7 @@ const containerSelectByUM = document.querySelector('.input_um')
 const containerSelectByType = document.querySelector('.input_type')
 const form1 = document.querySelector('#form1')
 const form2 = document.querySelector('#form2')
-const bodyList = document.querySelector('#list')
+const bodyList = document.querySelector('#details')
 
 const Items = []
 let id = 1   
