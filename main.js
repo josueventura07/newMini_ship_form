@@ -32,7 +32,7 @@ function printItems() {
         }
         
         bodyList.innerHTML = html;
-           
+           console.log(Items)
 }
 
 printItems()
@@ -50,7 +50,7 @@ form1.addEventListener('submit', (e) => {
         type,
         description,
         um,
-        quantity
+        quantity: parseFloat(quantity)
     }
 
     id++
