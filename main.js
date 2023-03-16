@@ -20,12 +20,6 @@ function printItems() {
 
         for(const item of Items) {
             
-            headId.setAttribute('name', `id(${item.id})`)
-            headTipo.setAttribute('name', `tipo(${item.id})`)
-            headDescription.setAttribute('name', `description(${item.id})`)
-            headUm.setAttribute('name', `um(${item.id})`)
-            headQuantity.setAttribute('name', `quantity(${item.id})`)
-
             html += `
                     <tr>
                         <th class="row"><input class="inputs_table" type="text" name="id(${item.id})" value="${item.id}"></th>
@@ -38,11 +32,10 @@ function printItems() {
                         </td>
                     </tr>
                 `
-
         }
         
         bodyList.innerHTML = html;
-           console.log(Items)
+           
 }
 
 printItems()
