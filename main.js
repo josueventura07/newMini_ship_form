@@ -5,7 +5,11 @@ const containerSelectByDescrip = document.querySelector('.input_descript')
 const containerSelectByUM = document.querySelector('.input_um')
 const containerSelectByType = document.querySelector('.input_type')
 const form1 = document.querySelector('#form1')
-const form2 = document.querySelector('#form2')
+const headId = document.querySelector('#id')
+const headTipo = document.querySelector('#tipo')
+const headDescription = document.querySelector('#description')
+const headUm = document.querySelector('#um')
+const headQuantity = document.querySelector('#quantity')
 const bodyList = document.querySelector('#details')
 
 const Items = []
@@ -15,14 +19,20 @@ function printItems() {
     let html = ''
 
         for(const item of Items) {
+            
+            headId.setAttribute('name', `id(${item.id})`)
+            headTipo.setAttribute('name', `tipo(${item.id})`)
+            headDescription.setAttribute('name', `description(${item.id})`)
+            headUm.setAttribute('name', `um(${item.id})`)
+            headQuantity.setAttribute('name', `quantity(${item.id})`)
 
             html += `
                     <tr>
-                        <th class="row"><input class="inputs_table" type="text" name="id" value="${item.id}"></th>
-                        <td><input class="inputs_table" type="text" name="tipo" value="${item.type}"></td>
-                        <td><input class="inputs_table" type="text" name="descripcion" value="${item.description}"></td>
-                        <td><input class="inputs_table" type="text" name="unidad de medida" value="${item.um}"></td>
-                        <td><input class="inputs_table" type="number" name="cantidad" value="${item.quantity}"></td>
+                        <th class="row"><input class="inputs_table" type="text" name="id(${item.id})" value="${item.id}"></th>
+                        <td><input class="inputs_table" type="text" name="tipo(${item.id})" value="${item.type}"></td>
+                        <td><input class="inputs_table" type="text" name="descripcion(${item.id})" value="${item.description}"></td>
+                        <td><input class="inputs_table" type="text" name="unidad de medida(${item.id})" value="${item.um}"></td>
+                        <td><input class="inputs_table" type="text" name="cantidad(${item.id})" value="${item.quantity}"></td>
                         <td id="${item.id}">
                             <button class="btn_delete">Borrar</button>
                         </td>
