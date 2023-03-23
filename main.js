@@ -1,4 +1,4 @@
-import {listComp, listHorno, listReactive, UM, listTypes, listBathroom, listOffice} from './data.js'
+import {listComp, listHorno, listReactive, UM, listTypes, listBathroom, listOffice, blanks, sunshineBlanks, rubenBlanks} from './data.js'
 
 
 const containerSelectByDescrip = document.querySelector('.input_descript')
@@ -13,7 +13,22 @@ const headQuantity = document.querySelector('#quantity')
 const bodyList = document.querySelector('#details')
 
 const Items = []
-let id = 1   
+let id = 1 
+const newListBlanks = []
+const newListBlanksSunshine = []
+const newListBlanksRuben = []
+
+blanks.forEach(element => {
+    newListBlanks.push(element.style.toUpperCase() + "-" + element.color.toUpperCase() + "-" + element.size.toUpperCase())
+})
+
+sunshineBlanks.forEach(element => {
+    newListBlanksSunshine.push(element.style.toUpperCase() + "-" + element.color.toUpperCase() + "-" + element.size.toUpperCase())
+})
+
+rubenBlanks.forEach(element => {
+    newListBlanksRuben.push(element.style.toUpperCase() + "-" + element.color.toUpperCase() + "-" + element.size.toUpperCase())
+})
 
 function printItems() {
     let html = ''
@@ -84,19 +99,25 @@ bodyList.addEventListener('click', (e) => {
 
 containerSelectByType.addEventListener('change', (e) => {
     
-   let value = e.currentTarget.value
+   let value = e.currentTarget.value.toLowerCase()
     
-    if(value == 'COMPONENTES') {
+    if(value == 'componentes') {
         descriptions(listComp)
-    } else if(value === 'HORNO') {
+    } else if(value === 'horno') {
         descriptions(listHorno)
-    } else if(value === 'REACTIVO') {
+    } else if(value === 'reactivo') {
         descriptions(listReactive)
-    } else if(value === 'INSUMOS PARA BAÑOS') {
+    } else if(value === 'insumos para baños') {
         descriptions(listBathroom)
-    } else if(value === 'MATERIALES PARA OFICINA') {
+    } else if(value === 'materiales para oficina') {
         descriptions(listOffice)
-    }    
+    } else if(value === 't-shirt') {
+        descriptions(newListBlanks)
+    } else if(value === 'sunshine') {
+        descriptions(newListBlanksSunshine)
+    } else if(value === 'ruben') {
+        descriptions(newListBlanksRuben)
+    }  
     
 })
 
@@ -106,7 +127,7 @@ function UnitOfMeasure(um) {
     um.map(element => {
         
        html += `
-                <option value="${element}">${element}</option>
+                <option value="${element.toUpperCase()}">${element.toUpperCase()}</option>
                 
                 `
               return containerSelectByUM.innerHTML = html; 
@@ -119,7 +140,7 @@ function types(type) {
         type.map(element => {
             
            html += `
-                    <option value="${element}">${element}</option>
+                    <option value="${element.toUpperCase()}">${element.toUpperCase()}</option>
                     
                     `
                   return containerSelectByType.innerHTML = html; 
@@ -133,7 +154,7 @@ function descriptions(description) {
         description.map(element => {
             
            html += `
-                    <option value="${element}">${element}</option>
+                    <option value="${element.toUpperCase()}">${element.toUpperCase()}</option>
                    `
                   return containerSelectByDescrip.innerHTML = html; 
             })          

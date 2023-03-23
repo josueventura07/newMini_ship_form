@@ -145,6 +145,22 @@ thead {
     font-size: 12px;
 }
 
+.col1 {
+    width: 20px;
+}
+
+.col2 {
+    width: 50px;
+}
+
+.col3 {
+    width: 140px;
+}
+
+.col5 {
+    width: 50px;
+}
+
 tbody {
     width: 100%;
     background-color: white;
@@ -153,7 +169,7 @@ tbody {
 
 .inputs_table {
     width: 100%;
-    font-size: 12px;
+    font-size: 9px;
     text-align: center;
 }
 
