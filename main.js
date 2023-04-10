@@ -1,34 +1,58 @@
-import {listComp, listHorno, listReactive, UM, listTypes, listBathroom, listOffice, blanks, sunshineBlanks, rubenBlanks} from './data.js'
+import {listComp, listHorno, listReactive, UM, listTypes, listBathroom, listOffice, blanks, tShirtSizes} from './data.js'
 
 
-const containerSelectByDescrip = document.querySelector('.input_descript')
+const containerSelectByDescrip1 = document.querySelector('.input_descript1')
+const containerSelectByDescrip2 = document.querySelector('.input_descript2')
 const containerSelectByUM = document.querySelector('.input_um')
 const containerSelectByType = document.querySelector('.input_type')
+const containerSelectByStyle = document.querySelector('.input_style')
+const containerSelectSize = document.querySelector('.input_size')
 const form1 = document.querySelector('#form1')
-const headId = document.querySelector('#id')
+const form2 = document.querySelector('#form1_1')
 const headTipo = document.querySelector('#tipo')
 const headDescription = document.querySelector('#description')
 const headUm = document.querySelector('#um')
 const headQuantity = document.querySelector('#quantity')
 const bodyList = document.querySelector('#details')
+const selectWarehouse = document.querySelector('.warehouse_input')
+const selectWarehouseContainer = document.querySelector('#select_warehouse')
+const btnChangeWarehouse = document.querySelectorAll('.btn_change_warehouse')
+
+btnChangeWarehouse.forEach(e => {
+    e.addEventListener('click', e => {
+        form1.classList.add('form_hidden')
+        form2.classList.add('form_hidden')
+        selectWarehouseContainer.classList.remove('form_hidden')
+    })
+})
+
+selectWarehouse.addEventListener('change', (e) => {
+  
+    let value = e.currentTarget.value
+    
+    if(value === 'QUIMICOS, PINTURAS Y COMP') {
+        form1.classList.remove('form_hidden')
+        selectWarehouseContainer.classList.add('form_hidden')
+    } else if (value === 'BLANKS') {
+        form2.classList.remove('form_hidden')
+        selectWarehouseContainer.classList.add('form_hidden')
+    }
+  
+})
+
+
 
 const Items = []
 let id = 1 
 const newListBlanks = []
-const newListBlanksSunshine = []
-const newListBlanksRuben = []
+const tShirtStyles = []
+
 
 blanks.forEach(element => {
-    newListBlanks.push(element.style.toUpperCase() + "-" + element.color.toUpperCase() + "-" + element.size.toUpperCase())
+    newListBlanks.push(element.description.toUpperCase() + "-" + element.color.toUpperCase())
+    tShirtStyles.push(element.style.toUpperCase())
 })
 
-sunshineBlanks.forEach(element => {
-    newListBlanksSunshine.push(element.style.toUpperCase() + "-" + element.color.toUpperCase() + "-" + element.size.toUpperCase())
-})
-
-rubenBlanks.forEach(element => {
-    newListBlanksRuben.push(element.style.toUpperCase() + "-" + element.color.toUpperCase() + "-" + element.size.toUpperCase())
-})
 
 function printItems() {
     let html = ''
@@ -78,6 +102,29 @@ form1.addEventListener('submit', (e) => {
     printItems()
 })
 
+form2.addEventListener('submit', (e) => {
+    e.preventDefault()
+
+    const type = e.target.style.value
+    const description = e.target.description.value + "-" + e.target.size.value
+    const um = e.target.unitOfMeasure.value
+    const quantity = e.target.quantity.value
+
+    const newItems = {
+        id,
+        type,
+        description,
+        um,
+        quantity: parseFloat(quantity)
+    }
+
+    id++
+
+    Items.push(newItems)
+    form2.reset()
+    printItems()
+})
+
 bodyList.addEventListener('click', (e) => {
     
     if(e.target.classList.contains('btn_delete')) {
@@ -101,25 +148,33 @@ containerSelectByType.addEventListener('change', (e) => {
     
    let value = e.currentTarget.value.toLowerCase()
     
-    if(value == 'componentes') {
-        descriptions(listComp)
+    if(value === 'componentes') {
+        descriptions1(listComp)
     } else if(value === 'horno') {
-        descriptions(listHorno)
+        descriptions1(listHorno)
     } else if(value === 'reactivo') {
-        descriptions(listReactive)
+        descriptions1(listReactive)
     } else if(value === 'insumos para baños') {
-        descriptions(listBathroom)
+        descriptions1(listBathroom)
     } else if(value === 'materiales para oficina') {
-        descriptions(listOffice)
-    } else if(value === 't-shirt') {
-        descriptions(newListBlanks)
-    } else if(value === 'sunshine') {
-        descriptions(newListBlanksSunshine)
-    } else if(value === 'ruben') {
-        descriptions(newListBlanksRuben)
-    }  
-    
+        descriptions1(listOffice)
+    }   
+   
 })
+
+containerSelectByStyle.addEventListener('change', (e) => {
+    
+    let value = e.currentTarget.value
+    let value2 = []
+        blanks.forEach(element => {
+        if (element.style.toLocaleUpperCase() === value) {
+            value2.push(element.description + " " + element.color)
+        } 
+    })
+            descriptions2(value2)
+        
+    
+ })
 
 function UnitOfMeasure(um) {
     let html = '<option value="">Selec una Unidad de Medida</option>';
@@ -147,7 +202,7 @@ function types(type) {
             })          
     };    
 
-function descriptions(description) {
+function descriptions1(description) {
     
     let html = '<option value="">Seleccione Producto</option>';
     
@@ -156,10 +211,83 @@ function descriptions(description) {
            html += `
                     <option value="${element.toUpperCase()}">${element.toUpperCase()}</option>
                    `
-                  return containerSelectByDescrip.innerHTML = html; 
+                  return containerSelectByDescrip1.innerHTML = html; 
             })          
     };
 
-UnitOfMeasure(UM)    
-types(listTypes)  
+function descriptions2(description) {
+    
+        let html = '<option value=""></option>';
+        
+            description.map(element => {
+               
+               html += `
+                        <option value="${element.toUpperCase()}">${element.toUpperCase()}</option>
+                       `
+                      return containerSelectByDescrip2.innerHTML = html; 
+                })          
+    };
 
+function styles(style) {
+    
+        let html = '<option value="">Seleccione el estilo</option>';
+        
+            style.map(element => {
+                
+               html += `
+                        <option value="${element.toUpperCase()}">${element.toUpperCase()}</option>
+                       `
+                      return containerSelectByStyle.innerHTML = html; 
+                })          
+    };
+    
+function Sizes(size) {
+    
+        let html = '<option value="">Seleccione el size</option>';
+            
+            size.map(element => {
+                    
+                html += `
+                        <option value="${element.toUpperCase()}">${element.toUpperCase()}</option>
+                           `
+                        return containerSelectSize.innerHTML = html; 
+            })          
+    };    
+
+UnitOfMeasure(UM)    
+types(listTypes) 
+styles(tShirtStyles) 
+Sizes(tShirtSizes)
+
+/*const sendForm = ((d)=> {
+       const $form = d.querySelector('.form2')
+       //$loader = d.querySelector('.contact-form-loader'),
+       //$response = d.querySelector('.content-response');
+   
+       $form.addEventListener('submit', e => {
+           e.preventDefault()
+           //$loader.classList.remove('none');
+           fetch('https://formsubmit.co/ajax/dyeworks.inventario@ut.com.do', {
+               method: "POST",
+               body: new FormData(e.target)
+           })
+               .then((res) => (res.ok ? res.json() : Promise.reject(res)))
+               .then(json => {
+                   console.log(json);
+                   location.hash = '#gracias';
+                   $form.reset();
+               })
+               .catch(err => {
+                   console.log(err);
+                   let message = err.statusText || `Ocurrio un error al enviar, intenta nuevamente`
+                   $response.querySelector('h3').innerHTML = `Error ${err.status} : ${message}`
+               })
+               .finally(() => {
+                   //$loader.classList.add('none');
+                   setTimeout(()=> {
+                       location.hash = '#close';
+                   }, 3000)
+               })
+       })
+   })(document)
+   */

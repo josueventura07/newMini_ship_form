@@ -10,9 +10,16 @@
 <body>
 <div class="container">    
     <div class="form_box1">
-        <form id="form1" class="form1">
-            <h3>Despacho de Almacenes</h3>
-            
+        <div id="select_warehouse" class="main">
+            <label for="warehouse">Almacen</label>
+                    <select class="warehouse_input" name="warehouse" id="warehouse">
+                        <option value="">Seleccionar Almacen</option>
+                        <option value="QUIMICOS, PINTURAS Y COMP">QUIMICOS, PINTURAS & COMP</option>
+                        <option value="BLANKS">BLANKS</option>
+                    </select>
+        </div>    
+        <form id="form1" class="form1 form_hidden">
+            <h3>Despacho de Quimicos y Pinturas</h3>
             <div class="info">  
                 <div class="boxes_form">
                     <label for="type">Tipo</label>
@@ -27,7 +34,7 @@
                 </div>
                 <div class="boxes_form description">
                     <label for="description">Descripción</label>
-                    <select class="input_descript" name="description" id="descripcion" required></select>
+                    <select class="input_descript1" name="description" id="descripcion" required></select>
                 </div>
                 <div class="boxes_form">
                     <label for="unit_of_measure">UM</label>
@@ -37,14 +44,48 @@
                     <label for="quantity">Cantidad</label>
                     <input name="quantity" type="text" id="quantity" required>
                 </div>
-            </div>  
-            <button class="btn_add" id="btn_add">Agregar</button>
+            </div>
+            <div class="btn_change_warehouse">Cambiar de Almacen</div>  
+            <button class="btn_add1" id="btn_add">Agregar</button>
+        </form>
+        <form id="form1_1" class="form1_1 form_hidden">
+            <h3>Despacho de Camisetas</h3>
+            
+            <div class="info2">  
+                <div class="boxes_form">
+                    <label for="style">Estilo</label>
+                    <select class="input_style" name="style" id="style" required></select>
+                </div>
+                <div class="boxes_form description">
+                    <label for="description">Descripción</label>
+                    <select class="input_descript2" name="description" id="descripcion" required></select>
+                </div>
+                <div class="boxes_form">
+                    <label for="size">Size</label>
+                    <select class="input_size" name="size" id="size" required></select>
+                </div>
+                <div class="boxes_form">
+                    <label for="unit_of_measure">UM</label>
+                    <select class="input_blanks_um" name="unitOfMeasure" id="unit_of_measure" required>
+                        <option value="">Elija la Unidad de Medida</option>
+                        <option value="CAJA">CAJA</option>
+                        <option value="UNIDAD">UNIDAD</option>
+                    </select>
+                </div>
+                
+                <div class="boxes_form">
+                    <label for="quantity">Cantidad</label>
+                    <input name="quantity" type="text" id="quantity" required>
+                </div>
+            </div>
+            <div class="btn_change_warehouse">Cambiar de Almacen</div> 
+            <button class="btn_add2" id="btn_add">Agregar</button>
         </form>
     </div>
     <div class="form_box2">
         <form id="form2" class="form2" name="formulario_de_despachos" netlify action="">
             <div class="boxes_form">
-                <label for="responsible">Responsable</label>
+                <label for="responsible">Despachado por</label>
                 <select name="responsable" id="responsible" required>
                     <option value="">Seleccione el Responsable</option>
                     <option value="Ambiorix Ramirez">Ambiorix Ramirez</option>
@@ -52,11 +93,28 @@
                     <option value="Josue Ventura">Josue Ventura</option>
                 </select>
             </div>
+
+            <div class="box_handle">
+                <div class="boxes_form">
+                    <label for="handled_by">Tratamiento</label>
+                    <select name="handled_by" id="handled_by" required>
+                        <option value="">Seleccione</option>
+                        <option value="Horno">Horno</option>
+                        <option value="Reactivo">Reactivo</option>
+                    </select>
+                </div>
+                
+                <div class="box_client">
+                    <label for="client">Cliente</label>
+                    <input type="text" name="client" id="client">
+                </div>
+            </div>
+
                 <table class="table">
                     <thead>
                       <tr>
                         <th class="col1">#</th>
-                        <th class="col2">Tipo</th>
+                        <th class="col2">Tipo/Estilo</th>
                         <th class="col3">Descripción</th>
                         <th class="col4">UM</th>
                         <th class="col5">Cantidad</th>
@@ -74,6 +132,10 @@
                     </tbody>
 
                   </table>
+                  <div class="box_deliveredBy">
+                    <label for="delivered_to">Entregado a</label>
+                    <input type="text" name="delivered_to" id="delivered_to" required>
+                </div>
             <button class="btn_send">Enviar</button>
         </form>
     </div>
