@@ -301,6 +301,7 @@ tbody {
     font-size: 18px;
     font-weight: bold;
     margin-right: 5px;
+    padding-right: 4px;
 }
 
 .box_client_hidden {
@@ -308,7 +309,7 @@ tbody {
 }
 
 .box_client input {
-    width: 150px;
+    width: 100%;
     font-size: 16px;
     
 }
