@@ -18,11 +18,13 @@ const selectWarehouse = document.querySelector('.warehouse_input')
 const selectWarehouseContainer = document.querySelector('#select_warehouse')
 const btnChangeWarehouse = document.querySelectorAll('.btn_change_warehouse')
 
+
 btnChangeWarehouse.forEach(e => {
     e.addEventListener('click', e => {
         form1.classList.add('form_hidden')
         form2.classList.add('form_hidden')
         selectWarehouseContainer.classList.remove('form_hidden')
+        
     })
 })
 
