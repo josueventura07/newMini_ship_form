@@ -19,7 +19,7 @@
                     </select>
         </div>    
         <form id="form1" class="form1 form_hidden">
-            <h3>Despacho de Quimicos y Pinturas</h3>
+            <h3 class="title_form1">Despacho de Quimicos y Pinturas</h3>
             <div class="info">  
                 <div class="boxes_form">
                     <label for="type">Tipo</label>
@@ -96,18 +96,27 @@
 
             <div class="box_handle">
                 <div class="boxes_form">
-                    <label for="handled_by">Tratamiento</label>
+                    <label for="handled_by">Uso en</label>
                     <select name="handled_by" id="handled_by" required>
-                        <option value="">Seleccione</option>
+                        <option value="">Seleccione Area ó Depto.</option>
                         <option value="Horno">Horno</option>
                         <option value="Reactivo">Reactivo</option>
+                        <option value="Empaque">Empaque</option>
+                        <option value="HaneIrr">HANESIRR</option>
+                        <option value="Embarque">Embarque</option>
+                        <option value="Trompo">Trompo</option>
+                        <option value="Lavado">Lavado</option>
+                        <option value="Lavado">Secadoras</option>
+                        <option value="Limpieza">Limpieza</option>
+                        <option value="Almacen Blanks">Almacen Blanks</option>
+                        <option value="Almacen quimicos y pinturas">Almacen Quimicos y Pinturas</option>
                         <option value="Reemplazo de piezas dañadas en proceso">Reemplazo de piezas dañadas en proceso</option>
                         <option value="Muestras">Muestras</option>
-                        <option value="Donacion">Donacion</option>
+                        <option value="Donacion">Donación</option>
                     </select>
                 </div>
                 
-                <div class="box_client">
+                <div class="box_client box_client_hidden">
                     <label for="client">Cliente</label>
                     <input type="text" name="client" id="client">
                 </div>

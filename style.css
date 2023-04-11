@@ -150,6 +150,10 @@ h3 {
     text-transform: uppercase;
 }
 
+.title_form1 {
+    text-align: center;
+}
+
 
 .form_box2 {
     width: 100%;
@@ -297,6 +301,10 @@ tbody {
     font-size: 18px;
     font-weight: bold;
     margin-right: 5px;
+}
+
+.box_client_hidden {
+    display: none;
 }
 
 .box_client input {

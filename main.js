@@ -19,27 +19,31 @@ const selectWarehouseContainer = document.querySelector('#select_warehouse')
 const btnChangeWarehouse = document.querySelectorAll('.btn_change_warehouse')
 const defaultOption = document.querySelector('.warehouse_input')
 
+
 btnChangeWarehouse.forEach(e => {
     e.addEventListener('click', e => {
         form1.classList.add('form_hidden')
         form2.classList.add('form_hidden')
         selectWarehouseContainer.classList.remove('form_hidden')
         defaultOption.selectedIndex = 0
+       
     })
 })
 
 selectWarehouse.addEventListener('change', (e) => {
-  
+    const clientBox = document.querySelector('.box_client')
     let value = e.currentTarget.value
     
     if(value === 'QUIMICOS, PINTURAS Y COMP') {
         form1.classList.remove('form_hidden')
         selectWarehouseContainer.classList.add('form_hidden')
+        clientBox.classList.add('box_client_hidden')
     } else if (value === 'BLANKS') {
         form2.classList.remove('form_hidden')
         selectWarehouseContainer.classList.add('form_hidden')
+        clientBox.classList.remove('box_client_hidden')
     }
-  
+        
 })
 
 
