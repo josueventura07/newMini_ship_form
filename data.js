@@ -6,7 +6,7 @@ const listComp = ["fundas","gomitas","cinta adhesiva","fleje",
 const listBathroom = ["papel higienico","toalla precortada"
 ]
 
-const listTypes = ["componentes","insumos para baños","materiales para oficina"
+const listTypes = ["componentes","insumos para baños","materiales para oficina","horno","reactivo"
 ]
 
 const listOffice = ["resma de papel 8 1/2 x 11"
