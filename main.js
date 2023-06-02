@@ -127,7 +127,7 @@ form2.addEventListener('submit', (e) => {
     const description = e.target.description.value + "-" + e.target.size.value
     const um = e.target.unitOfMeasure.value
     const quantity = e.target.quantity.value
-    const info = sendJson.value = localStorage.getItem('items')
+    const jsonData = sendJson.value = localStorage.getItem('items')
 
     const newItems = {
         id,
@@ -135,7 +135,7 @@ form2.addEventListener('submit', (e) => {
         description,
         um,
         quantity: parseFloat(quantity),
-        info
+        jsonData
     }
 
     id++
