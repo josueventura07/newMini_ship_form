@@ -111,7 +111,15 @@ form1.addEventListener('submit', (e) => {
 form2.addEventListener('submit', (e) => {
     e.preventDefault()
 
-    const type = e.target.style.value
+    
+    let formData = new FormData(form2);
+    const jsonData = {};
+    for (let [k, v] of formData) {
+      jsonData[k] = v;
+    }
+    
+
+    /*const type = e.target.style.value
     const description = e.target.description.value + "-" + e.target.size.value
     const um = e.target.unitOfMeasure.value
     const quantity = e.target.quantity.value
@@ -126,9 +134,9 @@ form2.addEventListener('submit', (e) => {
 
     id++
 
-    Items.push(JSON.strignify(newItems))
+    Items.push(newItems)
     form2.reset()
-    printItems()
+    printItems()*/
 })
 
 bodyList.addEventListener('click', (e) => {
@@ -297,3 +305,9 @@ Sizes(tShirtSizes)
        })
    })(document)
    */
+
+   
+
+   
+   
+      
