@@ -50,7 +50,6 @@ selectWarehouse.addEventListener('change', (e) => {
 
 
 const Items = []
-
 let id = 1 
 const newListBlanks = []
 const tShirtStyles = []
@@ -113,7 +112,7 @@ form1.addEventListener('submit', (e) => {
 form2.addEventListener('submit', (e) => {
     e.preventDefault()
     
-    const sendJson = document.querySelector('#sendJson')    
+    
     /*
     let formData = new FormData(form2);
     const jsonData = {};
@@ -127,21 +126,19 @@ form2.addEventListener('submit', (e) => {
     const description = e.target.description.value + "-" + e.target.size.value
     const um = e.target.unitOfMeasure.value
     const quantity = e.target.quantity.value
-    const jsonData = sendJson.value = localStorage.getItem('items')
-
+    
     const newItems = {
         id,
         type,
         description,
         um,
         quantity: parseFloat(quantity),
-        jsonData
     }
 
     id++
 
     Items.push(newItems)
-    //form2.reset()
+    form2.reset()
     printItems()
 })
 
