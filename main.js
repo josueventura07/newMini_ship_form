@@ -20,6 +20,7 @@ const btnChangeWarehouse = document.querySelectorAll('.btn_change_warehouse')
 const defaultOption = document.querySelector('.warehouse_input')
 
 
+
 btnChangeWarehouse.forEach(e => {
     e.addEventListener('click', e => {
         form1.classList.add('form_hidden')
@@ -49,6 +50,7 @@ selectWarehouse.addEventListener('change', (e) => {
 
 
 const Items = []
+
 let id = 1 
 const newListBlanks = []
 const tShirtStyles = []
@@ -102,41 +104,45 @@ form1.addEventListener('submit', (e) => {
     }
 
     id++
-
     Items.push(newItems)
+    localStorage.setItem('items', JSON.stringify(Items))
     form1.reset()
     printItems()
 })
 
 form2.addEventListener('submit', (e) => {
     e.preventDefault()
-
     
+    const sendJson = document.querySelector('#sendJson')    
+    /*
     let formData = new FormData(form2);
     const jsonData = {};
     for (let [k, v] of formData) {
       jsonData[k] = v;
     }
-    
-
-    /*const type = e.target.style.value
+    console.log(jsonData);
+   
+ */
+    const type = e.target.style.value
     const description = e.target.description.value + "-" + e.target.size.value
     const um = e.target.unitOfMeasure.value
     const quantity = e.target.quantity.value
+    const info = sendJson.value = localStorage.getItem('items')
 
     const newItems = {
         id,
         type,
         description,
         um,
-        quantity: parseFloat(quantity)
+        quantity: parseFloat(quantity),
+        info
     }
 
     id++
 
     Items.push(newItems)
-    form2.reset()
-    printItems()*/
+    //form2.reset()
+    printItems()
 })
 
 bodyList.addEventListener('click', (e) => {
