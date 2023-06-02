@@ -126,7 +126,7 @@ form2.addEventListener('submit', (e) => {
 
     id++
 
-    Items.push(newItems)
+    Items.push(JSON.strignify(newItems))
     form2.reset()
     printItems()
 })
