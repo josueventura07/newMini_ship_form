@@ -329,3 +329,12 @@ tbody {
 .input_style {
     font-size: 16px;
 }
+
+textarea {
+    resize: none;
+    display: none;
+}
+
+.lista_title {
+    display: none;
+}

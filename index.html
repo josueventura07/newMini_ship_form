@@ -134,21 +134,15 @@
                       </tr>
                     </thead>
                     <tbody id="details">
-                        <tr>
-                            <th class="row"><input class="inputs_table" type="text" name="id" value=""></th>
-                            <td><input class="inputs_table"  type="text" name="tipo" value=""></td>
-                            <td><input class="inputs_table" type="text" name="descripcion" value=""></td>
-                            <td><input class="inputs_table" type="text" name="unidad de medida" value=""></td>
-                            <td><input class="inputs_table" type="text" name="cantidad" value=""></td>
-                        </tr>
+                       
                     </tbody>
-
                   </table>
+                  <label class="lista_title" for="lista">Lista de Despachos</label>
+                  <textarea name="lista" id="lista" cols="30" rows="10"></textarea>
                   <div class="box_deliveredBy">
                     <label for="delivered_to">Entregado a</label>
                     <input type="text" name="delivered_to" id="delivered_to" required>
                 </div>
-                <input id="sendJson" type="text" name="jsonData" value="">
             <button class="btn_send">Enviar</button>
         </form>
     </div>

@@ -18,6 +18,7 @@ const selectWarehouse = document.querySelector('.warehouse_input')
 const selectWarehouseContainer = document.querySelector('#select_warehouse')
 const btnChangeWarehouse = document.querySelectorAll('.btn_change_warehouse')
 const defaultOption = document.querySelector('.warehouse_input')
+const lista = document.querySelector('#lista')
 
 
 
@@ -54,6 +55,17 @@ let id = 1
 const newListBlanks = []
 const tShirtStyles = []
 
+function pintarTextArea() {
+    lista.innerHTML = ''
+    Items.forEach(element => {
+        lista.insertAdjacentText('beforeend', `
+        Id = ${element.id}   
+        Tipo/Estilo = ${element.type}   
+        Description = ${element.description}
+        UM = ${element.um}
+        Cantidad = ${element.quantity}\n`)
+    })
+}
 
 blanks.forEach(element => {
     newListBlanks.push(element.description.toUpperCase() + "-" + element.color.toUpperCase())
@@ -68,11 +80,11 @@ function printItems() {
             
             html += `
                     <tr>
-                        <th class="row"><input class="inputs_table" type="text" name="id" value="${item.id}"></th>
-                        <td><input class="inputs_table" type="text" name="tipo" value="${item.type}"></td>
-                        <td><input class="inputs_table" type="text" name="descripcion" value="${item.description}"></td>
-                        <td><input class="inputs_table" type="text" name="unidad de medida" value="${item.um}"></td>
-                        <td><input class="inputs_table" type="text" name="cantidad" value="${item.quantity}"></td>
+                        <th class="row inputs_table">${item.id}</th>
+                        <td class="inputs_table">${item.type}</td>
+                        <td class="inputs_table">${item.description}</td>
+                        <td class="inputs_table">${item.um}</td>
+                        <td class="inputs_table">${item.quantity}</td>
                         <td id="${item.id}">
                             <button class="btn_delete">Borrar</button>
                         </td>
@@ -93,7 +105,7 @@ form1.addEventListener('submit', (e) => {
     const description = e.target.description.value
     const um = e.target.unitOfMeasure.value
     const quantity = e.target.quantity.value
-
+    
     const newItems = {
         id,
         type,
@@ -104,7 +116,7 @@ form1.addEventListener('submit', (e) => {
 
     id++
     Items.push(newItems)
-    localStorage.setItem('items', JSON.stringify(Items))
+    pintarTextArea()
     form1.reset()
     printItems()
 })
@@ -113,15 +125,6 @@ form2.addEventListener('submit', (e) => {
     e.preventDefault()
     
     
-    /*
-    let formData = new FormData(form2);
-    const jsonData = {};
-    for (let [k, v] of formData) {
-      jsonData[k] = v;
-    }
-    console.log(jsonData);
-   
- */
     const type = e.target.style.value
     const description = e.target.description.value + "-" + e.target.size.value
     const um = e.target.unitOfMeasure.value
@@ -155,7 +158,7 @@ bodyList.addEventListener('click', (e) => {
         }
         
      }
-     
+     pintarTextArea()
      printItems()  
     }
     
