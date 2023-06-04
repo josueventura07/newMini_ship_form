@@ -311,7 +311,7 @@ const sendForm = ((d)=> {
        $form.addEventListener('submit', e => {
            e.preventDefault()
            //$loader.classList.remove('none');
-           fetch('https://formsubmit.co/ajax/josueventura.job@gmail.com.do', {
+           fetch('https://formsubmit.co/ajax/josueventura.job@gmail.com', {
                method: "POST",
                body: new FormData(e.target)
            })
