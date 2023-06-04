@@ -55,7 +55,7 @@ const Items = []
 let id = 1 
 const newListBlanks = []
 const tShirtStyles = []
-
+console.log(Items)
 function pintarTextArea() {
     lista.innerHTML = ''
     Items.forEach(element => {
@@ -144,8 +144,8 @@ form1_1.addEventListener('submit', (e) => {
     form1_1.reset()
     printItems()
 })
-/*
-form2.addEventListener('submit', (e) => {
+
+/*form2.addEventListener('submit', (e) => {
     e.preventDefault()
     
     
@@ -167,8 +167,8 @@ form2.addEventListener('submit', (e) => {
     Items.push(newItems)
     form2.reset()
     printItems()
-})
-*/
+})*/
+
 bodyList.addEventListener('click', (e) => {
     
     if(e.target.classList.contains('btn_delete')) {
@@ -305,8 +305,7 @@ styles(tShirtStyles)
 Sizes(tShirtSizes)
 
 const sendForm = ((d)=> {
-       const $form = d.querySelector('.form2'),
-       $tableForm = d.querySelector('.form1_1')
+       const $form = d.querySelector('.form2')
        //$loader = d.querySelector('.contact-form-loader'),
        //$response = d.querySelector('.content-response');
    
@@ -322,7 +321,7 @@ const sendForm = ((d)=> {
                    console.log(json);
                    location.hash = '#gracias';
                    $form.reset();
-                   $tableForm.reset()
+                   
                })
                .catch(err => {
                    console.log(err);
@@ -334,7 +333,7 @@ const sendForm = ((d)=> {
                    setTimeout(()=> {
                        location.hash = '#close';
                    }, 3000)
-               })
+                })
        })
    })(document)
    
