@@ -305,7 +305,8 @@ styles(tShirtStyles)
 Sizes(tShirtSizes)
 
 const sendForm = ((d)=> {
-       const $form = d.querySelector('.form1_1')
+       const $form = d.querySelector('.form2'),
+       $tableForm = d.querySelector('.form1_1')
        //$loader = d.querySelector('.contact-form-loader'),
        //$response = d.querySelector('.content-response');
    
@@ -321,7 +322,7 @@ const sendForm = ((d)=> {
                    console.log(json);
                    location.hash = '#gracias';
                    $form.reset();
-                   
+                   $tableForm.reset()
                })
                .catch(err => {
                    console.log(err);
