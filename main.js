@@ -144,7 +144,7 @@ form1_1.addEventListener('submit', (e) => {
     form1_1.reset()
     printItems()
 })
-
+/*
 form2.addEventListener('submit', (e) => {
     e.preventDefault()
     
@@ -168,7 +168,7 @@ form2.addEventListener('submit', (e) => {
     form2.reset()
     printItems()
 })
-
+*/
 bodyList.addEventListener('click', (e) => {
     
     if(e.target.classList.contains('btn_delete')) {
@@ -320,6 +320,8 @@ const sendForm = ((d)=> {
                    console.log(json);
                    location.hash = '#gracias';
                    $form.reset();
+                   bodyList.innerHTML = '';
+                   
                })
                .catch(err => {
                    console.log(err);
