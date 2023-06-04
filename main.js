@@ -320,7 +320,7 @@ const sendForm = ((d)=> {
                    console.log(json);
                    location.hash = '#gracias';
                    $form.reset();
-                   bodyList.innerHTML = '';
+                   Items = []
                    
                })
                .catch(err => {
