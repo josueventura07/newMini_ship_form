@@ -320,13 +320,13 @@ const sendForm = ((d)=> {
                    console.log(json);
                    location.hash = '#gracias';
                    $form.reset();
+                   bodyList.innerHTML = '';
                    Items = []
-                   
                })
                .catch(err => {
                    console.log(err);
                    let message = err.statusText || `Ocurrio un error al enviar, intenta nuevamente`
-                   $response.querySelector('h3').innerHTML = `Error ${err.status} : ${message}`
+                   //$response.querySelector('h3').innerHTML = `Error ${err.status} : ${message}`
                })
                .finally(() => {
                    //$loader.classList.add('none');
