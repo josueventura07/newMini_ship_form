@@ -188,6 +188,10 @@ bodyList.addEventListener('click', (e) => {
     
 })
 
+function tableCleaner() {
+    Items = []
+}
+
 containerSelectByType.addEventListener('change', (e) => {
     
    let value = e.currentTarget.value.toLowerCase()
@@ -321,7 +325,7 @@ const sendForm = ((d)=> {
                    location.hash = '#gracias';
                    $form.reset();
                    bodyList.innerHTML = '';
-                   Items = []
+                   tableCleaner()
                })
                .catch(err => {
                    console.log(err);
