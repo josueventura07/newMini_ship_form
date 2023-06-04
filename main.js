@@ -52,10 +52,18 @@ selectWarehouse.addEventListener('change', (e) => {
 
 
 const Items = []
-let id = 1 
+let id = 1
 const newListBlanks = []
 const tShirtStyles = []
-console.log(Items)
+
+function dbCleaner(items) {
+    
+    for (let i = 0; i = items.length; i++) {
+        items.pop()
+    }
+    
+}
+
 function pintarTextArea() {
     lista.innerHTML = ''
     Items.forEach(element => {
@@ -101,7 +109,7 @@ printItems()
 
 form1.addEventListener('submit', (e) => {
     e.preventDefault()
-
+     
     const type = e.target.type.value
     const description = e.target.description.value
     const um = e.target.unitOfMeasure.value
@@ -116,6 +124,7 @@ form1.addEventListener('submit', (e) => {
     }
 
     id++
+
     Items.push(newItems)
     pintarTextArea()
     form1.reset()
@@ -136,6 +145,11 @@ form1_1.addEventListener('submit', (e) => {
         description,
         um,
         quantity: parseFloat(quantity)
+    }
+
+    if(Items.length === 0) {
+        id = 1
+        
     }
 
     id++
@@ -304,7 +318,7 @@ types(listTypes)
 styles(tShirtStyles) 
 Sizes(tShirtSizes)
 
-const sendForm = ((d)=> {
+const sendForm = ((d, items)=> {
        const $form = d.querySelector('.form2')
        //$loader = d.querySelector('.contact-form-loader'),
        //$response = d.querySelector('.content-response');
@@ -320,8 +334,11 @@ const sendForm = ((d)=> {
                .then(json => {
                    console.log(json);
                    location.hash = '#gracias';
+                   dbCleaner(items)
                    $form.reset();
-                   
+                   bodyList.innerHTML = '';
+                   pintarTextArea()
+                  
                })
                .catch(err => {
                    console.log(err);
@@ -335,7 +352,7 @@ const sendForm = ((d)=> {
                    }, 3000)
                 })
        })
-   })(document)
+   })(document, Items)
    
 
    
