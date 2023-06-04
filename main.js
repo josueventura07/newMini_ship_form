@@ -8,7 +8,8 @@ const containerSelectByType = document.querySelector('.input_type')
 const containerSelectByStyle = document.querySelector('.input_style')
 const containerSelectSize = document.querySelector('.input_size')
 const form1 = document.querySelector('#form1')
-const form2 = document.querySelector('#form1_1')
+const form1_1 = document.querySelector('#form1_1')
+const form2 = document.querySelector('#form2')
 const headTipo = document.querySelector('#tipo')
 const headDescription = document.querySelector('#description')
 const headUm = document.querySelector('#um')
@@ -25,7 +26,7 @@ const lista = document.querySelector('#lista')
 btnChangeWarehouse.forEach(e => {
     e.addEventListener('click', e => {
         form1.classList.add('form_hidden')
-        form2.classList.add('form_hidden')
+        form1_1.classList.add('form_hidden')
         selectWarehouseContainer.classList.remove('form_hidden')
         defaultOption.selectedIndex = 0
        
@@ -41,7 +42,7 @@ selectWarehouse.addEventListener('change', (e) => {
         selectWarehouseContainer.classList.add('form_hidden')
         clientBox.classList.add('box_client_hidden')
     } else if (value === 'BLANKS') {
-        form2.classList.remove('form_hidden')
+        form1_1.classList.remove('form_hidden')
         selectWarehouseContainer.classList.add('form_hidden')
         clientBox.classList.remove('box_client_hidden')
     }
@@ -118,6 +119,29 @@ form1.addEventListener('submit', (e) => {
     Items.push(newItems)
     pintarTextArea()
     form1.reset()
+    printItems()
+})
+
+form1_1.addEventListener('submit', (e) => {
+    e.preventDefault()
+
+    const type = e.target.style.value
+    const description = e.target.description.value + ' ' + e.target.size.value
+    const um = e.target.unitOfMeasure.value
+    const quantity = e.target.quantity.value
+    
+    const newItems = {
+        id,
+        type,
+        description,
+        um,
+        quantity: parseFloat(quantity)
+    }
+
+    id++
+    Items.push(newItems)
+    pintarTextArea()
+    form1_1.reset()
     printItems()
 })
 
@@ -279,7 +303,7 @@ types(listTypes)
 styles(tShirtStyles) 
 Sizes(tShirtSizes)
 
-/*const sendForm = ((d)=> {
+const sendForm = ((d)=> {
        const $form = d.querySelector('.form2')
        //$loader = d.querySelector('.contact-form-loader'),
        //$response = d.querySelector('.content-response');
@@ -287,7 +311,7 @@ Sizes(tShirtSizes)
        $form.addEventListener('submit', e => {
            e.preventDefault()
            //$loader.classList.remove('none');
-           fetch('https://formsubmit.co/ajax/dyeworks.inventario@ut.com.do', {
+           fetch('https://formsubmit.co/ajax/josueventura.job@gmail.com.do', {
                method: "POST",
                body: new FormData(e.target)
            })
@@ -310,7 +334,7 @@ Sizes(tShirtSizes)
                })
        })
    })(document)
-   */
+   
 
    
 
