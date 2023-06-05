@@ -329,7 +329,7 @@ const sendForm = ((d, items)=> {
        $form.addEventListener('submit', e => {
            e.preventDefault()
            //$loader.classList.remove('none');
-           fetch('https://formsubmit.co/ajax/dyewords.inventario@ut.com.do', {
+           fetch('https://formsubmit.co/ajax/dyeworks.inventario@ut.com.do', {
                method: "POST",
                body: new FormData(e.target)
            })
