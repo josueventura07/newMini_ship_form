@@ -195,20 +195,25 @@ thead {
 }
 
 .col1 {
-    width: 20px;
+    width: 25px;
 }
 
 .col2 {
-    width: 50px;
+    width: 35px;
 }
 
 .col3 {
-    width: 140px;
+    width: 100px;
 }
 
 .col5 {
-    width: 50px;
+    width: 15px;
 }
+
+.col6 {
+    width: 30px;
+}
+
 
 tbody {
     width: 100%;
@@ -217,7 +222,7 @@ tbody {
 }
 
 .inputs_table {
-    width: 100%;
+    
     font-size: 9px;
     text-align: center;
 }
@@ -342,6 +347,7 @@ tbody {
 textarea {
     resize: none;
     display: none;
+    
 }
 
 .lista_title {

@@ -89,12 +89,12 @@ function printItems() {
             
             html += `
                     <tr>
-                        <th class="row inputs_table">${item.id}</th>
-                        <td class="inputs_table">${item.type}</td>
-                        <td class="inputs_table">${item.description}</td>
-                        <td class="inputs_table">${item.um}</td>
-                        <td class="inputs_table">${item.quantity}</td>
-                        <td id="${item.id}">
+                        <th class="row inputs_table col1">${item.id}</th>
+                        <td class="inputs_table col2">${item.type}</td>
+                        <td class="inputs_table col3">${item.description}</td>
+                        <td class="inputs_table col4">${item.um}</td>
+                        <td class="inputs_table col5">${item.quantity}</td>
+                        <td class="col6" id="${item.id}">
                             <button class="btn_delete">Borrar</button>
                         </td>
                     </tr>
