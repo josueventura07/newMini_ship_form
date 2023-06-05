@@ -116,15 +116,18 @@ form1.addEventListener('submit', (e) => {
     const quantity = e.target.quantity.value
     
     const newItems = {
-        id,
+        id: Items.length === 0 ? 1 : id,
         type,
         description,
         um,
         quantity: parseFloat(quantity)
     }
 
-    id++
+    if(Items.length === 0) {
+        id = 1
+    } 
 
+    id++
     Items.push(newItems)
     pintarTextArea()
     form1.reset()
@@ -140,7 +143,7 @@ form1_1.addEventListener('submit', (e) => {
     const quantity = e.target.quantity.value
     
     const newItems = {
-        id,
+        id: Items.length === 0 ? 1 : id,
         type,
         description,
         um,
@@ -319,14 +322,14 @@ styles(tShirtStyles)
 Sizes(tShirtSizes)
 
 const sendForm = ((d, items)=> {
-       const $form = d.querySelector('.form2')
+       const $form = d.querySelector('#form2')
        //$loader = d.querySelector('.contact-form-loader'),
        //$response = d.querySelector('.content-response');
    
        $form.addEventListener('submit', e => {
            e.preventDefault()
            //$loader.classList.remove('none');
-           fetch('https://formsubmit.co/ajax/josueventura.job@gmail.com', {
+           fetch('https://formsubmit.co/ajax/dyewords.inventario@ut.com.do', {
                method: "POST",
                body: new FormData(e.target)
            })
