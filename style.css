@@ -1,3 +1,11 @@
+:root {
+    --main-bg-color: rgba(154, 205, 50, 0.9);
+    --second-bg-color: rgba(152, 158, 141, 0.9);
+    --primary-color: rgb(154, 205, 50);
+    --second-color: rgba(236, 76, 27, 0.87);
+    --white-color: white;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -27,13 +35,13 @@ body {
 
 .form1, .form1_1, .main {
     width: 100%;
-    border: solid rgb(154, 205, 50) 1px;
+    border: solid var(--primary-color) 1px;
     margin: auto;
     padding-left: 20px;
     padding-right: 20px;
     display: flex;
     flex-direction: column;
-    background-color: rgba(154, 205, 50, 0.9);
+    background-color: var(--main-bg-color);
     border-radius: 20px;
     box-shadow: 0px 3px 5px 3px #0003;
     box-sizing: border-box;
@@ -163,7 +171,7 @@ h3 {
 
 .form2 {
     width: 100%;
-    background-color: rgba(152, 158, 141, 0.9);
+    background-color: var(--second-bg-color);
     display: flex;
     flex-direction: column;
     border-radius: 20px;
@@ -171,6 +179,7 @@ h3 {
     box-sizing: border-box;
     padding: 10px;
     overflow: hidden;
+    position: relative;
 }
 
 .table {
@@ -338,3 +347,87 @@ textarea {
 .lista_title {
     display: none;
 }
+
+/*-----------------------------*/
+.contact_form-response {
+    padding: 3rem 1rem;
+    width: 400px;
+    text-align: center;
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--second-color);
+    text-decoration: underline;
+}
+
+.modal#gracias:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/*--------------------Loader-------------------*/
+.loader {
+    width: 60px;
+    aspect-ratio: 1;
+    box-sizing: border-box;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-top: 4px solid var(--second-color); 
+    animation: rotate360 3s linear infinite;
+    position: absolute;
+    bottom: 5px;
+    left: 20px;
+}
+
+
+
+.loading_title {
+    width: 100%;
+    text-align: center;
+    line-height: 20px;
+    font-size: 10px;
+    animation: rotateName360 3s linear infinite;
+    
+}
+
+@keyframes rotate360 {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotateName360 {
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+/*--------------------Modal Gracias-------------------*/
+
+.modal {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 1s;
+}
+
+.none {
+    display: none;
+}
+
+
+
