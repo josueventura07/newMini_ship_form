@@ -323,12 +323,12 @@ Sizes(tShirtSizes)
 
 const sendForm = ((d, items)=> {
        const $form = d.querySelector('#form2')
-       //$loader = d.querySelector('.contact-form-loader'),
-       //$response = d.querySelector('.content-response');
+       $loader = d.querySelector('.loader'),
+       $response = d.querySelector('.content-response');
    
        $form.addEventListener('submit', e => {
            e.preventDefault()
-           //$loader.classList.remove('none');
+           $loader.classList.remove('none');
            fetch('https://formsubmit.co/ajax/dyeworks.inventario@ut.com.do', {
                method: "POST",
                body: new FormData(e.target)
@@ -346,10 +346,10 @@ const sendForm = ((d, items)=> {
                .catch(err => {
                    console.log(err);
                    let message = err.statusText || `Ocurrio un error al enviar, intenta nuevamente`
-                   //$response.querySelector('h3').innerHTML = `Error ${err.status} : ${message}`
+                   $response.querySelector('h3').innerHTML = `Error ${err.status} : ${message}`
                })
                .finally(() => {
-                   //$loader.classList.add('none');
+                   $loader.classList.add('none');
                    setTimeout(()=> {
                        location.hash = '#close';
                    }, 3000)
