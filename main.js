@@ -322,10 +322,10 @@ styles(tShirtStyles)
 Sizes(tShirtSizes)
 
 const sendForm = ((d, items)=> {
-       const $form = d.querySelector('#form2')
-       $loader = d.querySelector('.loader'),
+       const $form = d.querySelector('#form2'),
+       $loader = d.querySelector('.loader'), 
        $response = d.querySelector('.content-response');
-   
+   console.log($loader)
        $form.addEventListener('submit', e => {
            e.preventDefault()
            $loader.classList.remove('none');
